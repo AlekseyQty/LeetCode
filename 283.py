@@ -14,5 +14,13 @@ def solution(nums):
                     break
     print(nums)
 
-nums = [1,0]
-solution(nums)
+def good_solution(nums):
+    last_zero = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[i],nums[last_zero] = nums[last_zero],nums[i]
+            last_zero +=1
+    print(nums)
+
+nums = [0,1,0,3,12]
+good_solution(nums)
